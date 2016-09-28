@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <script>
+        var mySmallNumber = 5;
+        var myString = "5";
+        var myBigNumber = 255;
+
+        output1= mySmallNumber== myString;
+        output2= mySmallNumber === myString;
+        output3= mySmallNumber < myBigNumber;
+        output4= mySmallNumber > myBigNumber;
+
+
+        console.log('------ft set 2-----');
+
+        console.log("My output is", output1);
+        console.log("My output2 is", output2);
+        console.log("My output3 is", output3);
+        console.log("My output4 is", output4);
+
+        console.log('------ft set 4-----');
+
+        var gameNumber = 64;
+        var userInput1 = 22;
+        var userInput2 = 64;
+
+        if (userInput1 > gameNumber) {
+            console.log('number is too high');
+        }
+
+        if (userInput1 < gameNumber){
+            console.log('number is too low');
+        }
+
+        if (userInput1 < 1 && userInput1 > 100){
+            console.log('the number is out of range');
+        }
+        else console.log('the number is in range');
+
+        if (userInput2 == gameNumber) {
+            console.log('the correct number has been guessed');
+        }
+        else console.log('try again');
+
+        console.log('------ft set 5-----');
+
+        switch (userInput1){
+            case gameNumber:
+                console.log('You found the correct number!');
+                break;
+            case gameNumber-10:
+                console.log('To low but warm');
+                break;
+            case gameNumber+10:
+                console.log('To high but warm');
+                break;
+            case gameNumber-25:
+                console.log('To low and cold');
+                break;
+            case gameNumber+25:
+                console.log('To high and cold');
+                break;
+            default:
+                console.log('You are way off');
+                break;
+
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
