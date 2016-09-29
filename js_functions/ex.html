@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JS Bin</title>
+</head>
+<body>
+<script>
+    document.writeln("1st<br>");
+    function add_two_numbers(num1, num2){
+
+        document.writeln("2nd<br>");
+        var inner_result = num1 + num2;
+        return inner_result;
+        document.writeln("3rd<br>");
+
+    }
+    document.writeln("4th<br>");
+    var outer_result = add_two_numbers(4,8);
+    document.writeln("5th<br>");
+    document.writeln("<br><br>Result is " + outer_result);
+</script>
+</body>
+</html>

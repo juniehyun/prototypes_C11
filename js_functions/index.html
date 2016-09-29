@@ -9,22 +9,38 @@
 </head>
 <body>
 
+<button onclick = "myMessage()">
+    click here
+</button>
+
+<!--//I was working on this example with Tim & Dan and wanted to keep this example so it's a bit different than the instructions ; -->
+<button onclick = "var a = add(5,8); console.log('inline '+a);">
+    click to add
+</button>
+
+<button onclick = "console.log(add2result)">
+    add #2
+</button>
+
+
+<div class="back" onclick="cardFlip(this)"><img src="imgs/card_design.png" alt="Card Back"></div>
+
 <div id="game-area">
     <div class="card">
         <div class="front"><img src="imgs/british_flag.jpg" alt=""></div>
-        <div class="back"><img src="imgs/card_design.png" alt="Card Back"></div>
+        <div class="back" onclick="cardFlip(this)"><img src="imgs/card_design.png" alt="Card Back"></div>
     </div>
     <div class="card">
         <div class="front"><img src="imgs/path.jpg" alt=""></div>
-        <div class="back"><img src="imgs/card_design.png" alt="Card Back"></div>
+        <div class="back" onclick="cardFlip(this)"><img src="imgs/card_design.png" alt="Card Back"></div>
     </div>
     <div class="card">
         <div class="front"><img src="imgs/british_flag.jpg" alt=""></div>
-        <div class="back"><img src="imgs/card_design.png" alt="Card Back"></div>
+        <div class="back" onclick="cardFlip(this)"><img src="imgs/card_design.png" alt="Card Back"></div>
     </div>
     <div class="card">
         <div class="front"><img src="imgs/path.jpg" alt=""></div>
-        <div class="back"><img src="imgs/card_design.png" alt="Card Back"></div>
+        <div class="back" onclick="cardFlip(this)"><img src="imgs/card_design.png" alt="Card Back"></div>
     </div>
 </div>
 
