@@ -26,15 +26,15 @@
             //Here is another .click example that changes the color of the div every time you click on it
             $("#div2").click(function(){
                 $(this).toggleClass("green");    //Advanced: $(this).toggleClass("green");// )
-                });
                 //Here is an if statement that outputs the color of div2 to the console when it is clicked
                 if($("#div2").hasClass("green")){
                     //If it has the class "green" then it will output "I am Green!"
                     $(this).text("I am Green!");
-                }else{
+                }else {
                     //else it does not have the class "green" then it will output "I am White!"
                     $(this).text("I am White!");
                 }
+                });
             //----Write your code bellow----//
             $("#div3").addClass("card-back")
                 .click(function(){
