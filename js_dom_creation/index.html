@@ -42,56 +42,86 @@
         $(document).ready(function () {
             //playground 1 code
             //make the h1 tag
-            var h1 = $("<h1>").text('I am a heading');
+            var h1 = $("<h1>",{
+                text:'I am a heading'
+            });
             //add the text to it
             //make the p tag
-            var p1 = $("<p>"), {
-                    text:'This is an awesome paragraph',
-            }
+            var p1 = $("<p>", {
+                text: 'This is an awesome paragraph'
+            });
             //add the text to it
             //make the p tag
             var p2 = $("<p>", {
                 text: 'This has red text',
-                style: {
-                    'color': 'red'
-                }
+                style: 'color:red'
             });
-        });
 
-                    //add the text to it
-                    //add the inline style to it
-                //append the elements to the #playground1
-                $("#playground1".append("h1", "p1", "p2"));
+            //add the text to it
+            //add the inline style to it
+            //append the elements to the #playground1
+            $("#playground1").append(h1, p1, p2);
             //playground 2 code
-//                var div1=$("<div>").text('Here is some awesome div text').css('font-weight', 'bold'; 'text-shadow');
 
-                var div1 = $("<div>",{
-                    text: 'Here is some awesome div text',
-                    style: {
-                        'font-weight': 'bold',
-                        'text-shadow': '1px 2px 2px black',
-                        'color': 'red'
-                    }
-                });
+            var div1 = $("<div>",{
+                text:'Here is some awesome div text',
+                class: 'awesome_class'
+            });
 
-                var div2=$("<div>", {
-                    text: 'Here is MORE awesome div text',
-                    style:{
-                        'font-weight' : 'bold',
-                        'text-shadow' : '1 px 2px 2px black',
-                        'color' : 'red'
-                        }
-                });
+            var div2 = $("<div>",{
+                text: 'Here is MORE awesome div text',
+                class: 'awesome_class',
+                id: 'my_awesome_div2'
+            });
 
+            var div3 = $("<div>", {
+                text: 'Here is EVEN MORE awesome div text',
+                class: 'awesome_class',
+                id: 'my_awesome_div3',
+                'data-coolness':'high'
+              });
 
-
-                    var div3=$("<div>").text('Here is EVEN MORE awesome div text');
-            $("#playground2").append("div1", "div2", "div3");
-
-
-
+            $("#playground2").append(div1, div2, div3);
 
             //playground 3 code
+
+            var ul1 = $("<ul>",{
+               class: 'neato',
+            });
+            var li1 = $("<li>",{
+                text: "Link1"
+            });
+            var li2 = $("<li>",{
+                text: "Link2"
+            });
+            var li3 = $("<li>",{
+                text: "Link3"
+            });
+
+            var dogfigure = $("<figure>",{
+                class:"awesome_picture"
+            });
+
+            var dogpicture = $("<img>",{
+                src:"http://comerecommended.com/wp-content/uploads/2013/01/how-to-get-awesome-back.jpg"
+            });
+
+            var dogpicturecaption = $("<figcaption>", {
+                html: "That's right, <span class = 'bold_text'> you are </span>"
+            });
+
+            ul1.append(li1, li2, li3);
+            $("#playground3").append(ul1, dogfigure);
+            dogfigure.append(dogpicture, dogpicturecaption);
+
+//end of document ready
+        });
+
+
+
+
+
+
     </script>
 </head>
 <body>
