@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+var student_array = [ "joe", "sam", "bob", "jane", "mary"];
+    console.log(student_array[2]);
+    console.log(student_array);
+    console.log(student_array.length);
+    console.log(student_array.push("candy", "tim"));
+    console.log(student_array.length);
+    console.log(student_array);
+
+    var student = {};
+    student.firstName = "Junie";
+    student.lastName = "Hyun";
+    student.age = "24";
+    student.school = "USC";
+    student.questionList = [];
+    student.hasQuestion = false;
+
+    student.greeting = function(){
+        return "Hello, my name is " + this.firstName;
+    };
+
+
+    student.aboutMe = function(){
+        return "My full name is " + this.firstName + " " + this.lastName;
+    };
+
+
+    student.askQuestion = function(question){
+        this.hasQuestion=true;
+        this.questionList.push(question);
+        return "A question has been added to your list;"
+    };
+
+
+
+    student.answerQuestion = function(){
+        if (this.hasQuestion== true) {
+            return student.questionList.pop();
+            //or.. you can do return student.questionList[student.questionList.length-1]
+        }
+        else{
+            this.hasQuestion = false;
+            return "You have no pending questions";
+        }
+
+        console.log("greeting", student.greeting());
+        console.log("aboutMe", student.aboutMe());
+        console.log("answerQuestion", student.answerQuestion());
+
+    }
+
+    function test_student(){
+        console.log(student.greeting());
+        console.log(student.aboutMe());
+        var question = "What is your major?";
+        student.askQuestion("what is your major?");
+        student.askQuestion("what is your quest?");
+        student.askQuestion("what is your goal?");
+        var x = student.answerQuestion();
+        console.log(x);
+
+
+    }
+    test_student();
+
+</script>
+
+<body>
+</body>
+</html>
