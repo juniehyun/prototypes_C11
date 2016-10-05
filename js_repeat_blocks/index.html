@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        console.log("---ascending order---");
+        for (var i = 0; i < numbers.length; i++) {
+            console.log(i);
+        }
+
+        console.log("---descending order---");
+        for (var i = numbers.length; i > 0; i--) {
+            console.log(i);
+        }
+
+        console.log("---odd ascending order---");
+        for (var i = 0; i < numbers.length; i += 2) {
+            console.log(numbers[i])
+        }
+
+        console.log("---mixed array---");
+        var mixedArray = [4, 56, 11, 13, 97, 22, 7, 36, 19, 5, 8, 10];
+        for (var i = 0; i < mixedArray.length; i++) {
+            console.log(i);
+        }
+
+        console.log("---mixed array odd---");
+        for (var i = 0; i < mixedArray.length; i += 2) {
+            if (mixedArray[i] % 2 != 0) {
+                console.log(mixedArray[i]);
+            }
+        }
+
+        var classRoom = {
+            desk1: 'Stu',
+            desk2: 'Peggy',
+            desk3: 'Lonestar',
+            desk4: 'George',
+            desk5: 'Sheldon'
+        }
+
+        //the syntax to create for loop is:
+        //for (var x in y){} <-- in this case below, we're using desk = x and classroom =y
+        for (var desk in classRoom) {
+            console.log(classRoom[desk] + " is at " + desk);
+        }
+
+        var studentArray = [
+            {name: "Bob", grade: 87},
+            {name: "Fred", grade: 82},
+            {name: "George",
+             grade: 93},
+            {name: "Robert", grade: 85}
+        ]
+
+        var studentName = function findStudent(studentName){
+            while
+                if (==){
+                console.log("found [studentname] their grade is: [grade]")
+            }
+                else {
+                console.log("Student [studentname] not found.")
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
