@@ -37,34 +37,44 @@
         var classRoom = {
             desk1: 'Stu',
             desk2: 'Peggy',
-            desk3: 'Lonestar',
+            desk3:'Lonestar',
             desk4: 'George',
             desk5: 'Sheldon'
         }
 
         //the syntax to create for loop is:
         //for (var x in y){} <-- in this case below, we're using desk = x and classroom =y
-        for (var desk in classRoom) {
-            console.log(classRoom[desk] + " is at " + desk);
+        for (var a in classRoom) {
+            console.log(classRoom[a] + " is at " + a);
         }
 
         var studentArray = [
             {name: "Bob", grade: 87},
             {name: "Fred", grade: 82},
-            {name: "George",
-             grade: 93},
+            {name: "George", grade: 93},
             {name: "Robert", grade: 85}
-        ]
+        ];
 
-        var studentName = function findStudent(studentName){
-            while
-                if (==){
-                console.log("found [studentname] their grade is: [grade]")
-            }
-                else {
-                console.log("Student [studentname] not found.")
+       function findStudent(studentName){
+            var output = "";
+            var i=0;
+            var
+            while (i < studentArray.length){
+                i++;
+                if (studentArray[i].name == studentName) {
+                    console.log('if true statement working');
+                    return("Found " + studentName + " their grade is:" + studentArray[i].grade + "%");
+                }
+                else{
+                    console.log('else statement working');
+                    return("Student " +studentName+ " not found." );
+                }
+//
             }
         }
+
+        findStudent("bob");
+
     </script>
 </head>
 <body>
