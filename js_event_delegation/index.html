@@ -4,6 +4,27 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        //what do I think is going to happen when I click on the new button? - I think it will log 'delegated button #5'
+        //What happened? - nothing happened
+        //Why? - nothing happened because the button was created after the first function was run that logs the text of the buttons
+
+
+        $(document).ready(function(){
+            $("#list button").on('click', function(){
+                console.log($(this).text());
+
+            });
+            var newList = $("<li>");
+            var newButton = $("<button>").text("Delegated Button #5").css('margin-top', '10px');
+            newList.append(newButton);
+            $("#list").append(newList);
+        });
+
+
+
+
+    </script>
     <meta charset="utf-8">
     <title>JS Event Delegation</title>
 </head>
