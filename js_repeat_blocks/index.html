@@ -37,7 +37,7 @@
         var classRoom = {
             desk1: 'Stu',
             desk2: 'Peggy',
-            desk3:'Lonestar',
+            desk3: 'Lonestar',
             desk4: 'George',
             desk5: 'Sheldon'
         }
@@ -55,25 +55,20 @@
             {name: "Robert", grade: 85}
         ];
 
-       function findStudent(studentName){
-            var output = "";
-            var i=0;
-            var
-            while (i < studentArray.length){
+        function findStudent(studentName) {
+            var i = 0;
+            while (i < studentArray.length) {
+                if (studentName == studentArray[i].name) {
+                    return "Found " + studentArray[i].name + " their grade is: " + studentArray[i].grade + "%";
+                }
                 i++;
-                if (studentArray[i].name == studentName) {
-                    console.log('if true statement working');
-                    return("Found " + studentName + " their grade is:" + studentArray[i].grade + "%");
-                }
-                else{
-                    console.log('else statement working');
-                    return("Student " +studentName+ " not found." );
-                }
-//
             }
+                return ("Student " + studentName + " not found." );
         }
+        console.log("Test 1:", findStudent("George"));
+        console.log("Test 2:", findStudent("Fred"));
+        console.log("Test 3:", findStudent("Hank"));
 
-        findStudent("bob");
 
     </script>
 </head>
