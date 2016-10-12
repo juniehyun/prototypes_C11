@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function coin_stack(starting_amount) {
+            this.value = starting_amount;
+            this.add_coins = function (number_to_add) {
+                this.value += number_to_add;
+            }
+            this.remove_coins = function (number_to_remove) {
+                if (this.value >= number_to_remove) {
+                    this.value = this.value - number_to_remove;
+                    return number_to_remove;
+                }
+                else {
+                    var coins_left = this.value;
+                    this.value -= this.value;
+                    return coins_left;
+                }
+            }
+        }
+
+        coin_stack.prototype.transfer_coins= function (coin_object, amount_of_coins){
+            this.add_coins(coin_object.remove_coins(amount_of_coins));
+        }
+
+
+        var my_coin_stack = new coin_stack(50);
+        console.log('my_coin_stack contains ' + my_coin_stack.value + ' coins');
+        my_coin_stack.add_coins(15);
+        console.log('I have '+ my_coin_stack.value+ ' coins in my coin stack');
+        my_coin_stack.remove_coins(37);
+        console.log('I have '+ my_coin_stack.value+ ' coins in my coin stack');
+        my_coin_stack.remove_coins(55);
+        console.log('I have '+ my_coin_stack.value+ ' coins in my coin stack');
+        var erics_coins = new coin_stack(50);
+        console.log('eric has ' + erics_coins.value);
+        var dans_coins = new coin_stack(50);
+        console.log('dan has ' + dans_coins.valgit ue);
+        erics_coins.transfer_coins(dans_coins,30);
+        console.log('eric has ' + erics_coins.value);
+        console.log('dan has ' + dans_coins.value);
+        dans_coins.transfer_coins(erics_coins,120);
+        console.log('dan has ' + dans_coins.value);
+        console.log('eric has ' + erics_coins.value);
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+<h1>Javascript OOP Prototype</h1>
+</body>
+</html>
