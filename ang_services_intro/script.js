@@ -1,4 +1,5 @@
 var app = angular.module('myApp', []);
+debugger;
 app.controller ('myController', function($http, $log){
     this.getData = function(){
         this.userInput =
@@ -6,14 +7,11 @@ app.controller ('myController', function($http, $log){
             url:'https://itunes.apple.com/search?term='+userInput+'&callback=JSON_CALLBACK',
             method: get,
         }).then(
-            function(response){
+            function (response) {
                 $log.log('call success', response);
             },
-            function(response){
+            function (response) {
                 $log.log('call failed');
             })
 
-    }
-
-        )
-})
+    });
