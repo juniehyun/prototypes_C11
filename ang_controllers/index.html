@@ -4,9 +4,86 @@
     <meta charset="UTF-8">
     <title>Angular Controllers</title>
     <!-- Add the AngularJS CDN below -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 </head>
-<body>
+<body ng-app = "myApp">
+<div ng-controller = "formController as fc">
+   First Name: <input type= 'text' ng-model = 'fc.form.fName'><br>
+   Last Name: <input type = 'text' ng-model = 'fc.form.lName'><br>
+    Email: <input type = 'text' ng-model = 'fc.form.email'><br>
+    Comments: <textarea ng-model='fc.form.comments' ng-disabled='fc.maxChar()'></textarea><br>
+    Characters left:<p> {{ fc.checkCharLength() }} </p><br>
+    <button ng-click = "fc.addStudent()">Add Student</button>
+    <hr>
+    <div ng-controller = 'tableController as tc'>
+        <table>
+            <p>Total Entries : {{ fc.formArray.length }}</p>
+            <tr ng-show="fc.formArray.length >= 1">
+                <th>Index</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Comments</th>
+                <th>Operations</th>
+            </tr>
+            <tr ng-repeat="x in fc.formArray">
+                <td> {{ $index }}</td>
+                <td> {{ x.fName+ " " + x.lName }}</td>
+                <td> {{ x.email }}</td>
+                <td> {{ x.comments }}</td>
+                <td><button ng-click="tc.removeStudent($index, fc.formArray)">delete</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script>
+    var app = angular.module("myApp",[]);
+    app.controller("formController", function(){
+        this.form = {
+//            comments: ''
+        };
+        this.formArray = [];
+        this.addStudent = function(){
+            this.formArray.push(this.form);
+            this.form = {};
+        };
+        this.maxLength = 25;
+        this.checkCharLength = function(){
+            if(this.form.comments) {
+                this.charRemain = this.maxLength - this.form.comments.length;
+            }
+            else{
+                this.charRemain = this.maxLength;
+            }
+            return this.charRemain;
 
+        };
+        this.maxChar = function(){
+            if(this.checkCharLength()<=0){
+                console.log('maxChar return true');
+                return true;
+            }
+            else{
+                console.log('maxChar return false');
+                return false;
+            }
+        }
+
+    });
+
+    app.controller("tableController", function(){
+//        this.eric =function(form_array){
+//            console.log("form_array : ", form_array);
+//        }
+    this.removeStudent = function(tableIndex, studentArray){
+        studentArray.splice(tableIndex,1);
+    }
+//    this.numberOfTableEntries = function(){
+//        console.log('numberofTableEntries ran');
+//        this.formArrayLength = $scope.formArray.length;
+//        return $scope.formArrayLength;
+//    }
+    })
+</script>
 </body>
+
 </html>
