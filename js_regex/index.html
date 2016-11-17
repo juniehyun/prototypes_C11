@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js_regex</title>
+    <script>
+        //feature set 1
+        var string = 'hello';
+        var fs1a = /e/;
+        console.log('*****FEATURE SET 1*****');
+        console.log('Result 1a : ', string.match(fs1a));
+        console.log('Result 1a : ', string.search(fs1a));
+
+        string = 'HE entEred';
+        var fs1b = /[eE]/g;
+        console.log('Result 1b: ', string.match(fs1b));
+
+        var string1 = 'stir the star';
+        var string2 = 'stim the stat';
+        var string3 = 'stir the stat';
+        var string4 = 'stim the star';
+        var fs1c = /st[ai]r/g;
+        console.log('Result 1c: ', string1.match(fs1c));
+        console.log('Result 1c: ', string2.match(fs1c));
+        console.log('Result 1c: ', string3.match(fs1c));
+        console.log('Result 1c: ', string4.match(fs1c));
+
+        //feature set 2
+        var phone1 = '818 555 1212';
+        var phone2 = '818-555-1212';
+        var phone3 = '1818 555 1212';
+        var phone4 = '1818-555-1212';
+        var phone5 = '1 818 555 1212';
+        var phone6 = '1-818-555-1212';
+        var phone7 = '(818) 555 1212';
+        var phone8 = '8185551212';
+        var phone9 = '818   555   1212';
+        var phone10 = '818 555-1212';
+        var phone11 = '18185551212';
+        var phone12 = '818555121';
+        var phone13 = '818?5551212';
+        var phone14 = '8185-55-1212';
+        var phone15 = '555-1212';
+        var phone16 = 'eight on eight, five five five, one two on two';
+        var phoneNumberRegex = /^[1]?[ \-]?[(]?[0-9]{3}[)]?[ \-]*[0-9]{3}[ \-]*[0-9]{4}$/;
+
+        console.log('*****FEATURE SET 2*****');
+        console.log('These should work : ');
+        console.log('Result phone1 : ', phone1.match(phoneNumberRegex));
+        console.log('Result phone2 : ', phone2.match(phoneNumberRegex));
+        console.log('Result phone3 : ', phone3.match(phoneNumberRegex));
+        console.log('Result phone4 : ', phone4.match(phoneNumberRegex));
+        console.log('Result phone5 : ', phone5.match(phoneNumberRegex));
+        console.log('Result phone6 : ', phone6.match(phoneNumberRegex));
+        console.log('Result phone7 : ', phone7.match(phoneNumberRegex));
+        console.log('Result phone8 : ', phone8.match(phoneNumberRegex));
+        console.log('Result phone9 : ', phone9.match(phoneNumberRegex));
+        console.log('Result phone10 : ', phone10.match(phoneNumberRegex));
+        console.log('Result phone11 : ', phone11.match(phoneNumberRegex));
+        console.log('These should not work :');
+        console.log('Result phone12 : ', phone12.match(phoneNumberRegex));
+        console.log('Result phone13 : ', phone13.match(phoneNumberRegex));
+        console.log('Result phone14 : ', phone14.match(phoneNumberRegex));
+        console.log('Result phone15 : ', phone15.match(phoneNumberRegex));
+        console.log('Result phone16 : ', phone16.match(phoneNumberRegex));
+
+        //feature set 3
+        var pw1 = 'helloDude3';
+        var pw2 = 'Pa5sWoRd';
+        var pw3 = 'thisIsaReallyL0NGpassword';
+        var pw4 = 'short';
+        var pw5 ='nocapsbutanumber1';
+        var pw6 = '5tartsWithANumber';
+        var pw7 = 'ALLCAPSBUT4NUMBER';
+        var pw8 = 'toDamnManyLettersForThisToBeAValidP4sswordYouKnowIt';
+        var pw9 ='ill#g@l_characters';
+        var passwordRegex = /^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])[a-zA-Z][a-zA-Z0-9]{5,31}$/;
+
+        console.log('*****FEATURE SET 3*****');
+        console.log('These should work :');
+        console.log('Result pw1 : ', pw1.match(passwordRegex));
+        console.log('Result pw2 : ', pw2.match(passwordRegex));
+        console.log('Result pw3 : ', pw3.match(passwordRegex));
+        console.log('These should not work :');
+        console.log('Result pw4 : ', pw4.match(passwordRegex));
+        console.log('Result pw5 : ', pw5.match(passwordRegex));
+        console.log('Result pw6 : ', pw6.match(passwordRegex));
+        console.log('Result pw7 : ', pw7.match(passwordRegex));
+        console.log('Result pw8 : ', pw8.match(passwordRegex));
+        console.log('Result pw9 : ', pw9.match(passwordRegex));
+
+
+    </script>
+</head>
+<body>
+<h1>JavaScript - Regular Expressions</h1>
+
+</body>
+</html>
